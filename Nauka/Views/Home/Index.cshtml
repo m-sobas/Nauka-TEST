@@ -1,0 +1,35 @@
+﻿@using Nauka.Models.ViewModels;
+@model List<UsersViewModel>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+
+@{
+    foreach (var item in Model)
+    {
+        <div class="test"> 
+            @{ 
+                foreach (var i in item.Users)
+                {
+                    @i.Id <span>&nbsp;</span> @i.Name <span>&nbsp;</span>
+                    <br />
+                    @i.Groups.Id
+                }
+                <br />
+            }
+        </div>
+
+        <div><br /></div>
+    }
+}
+
+
